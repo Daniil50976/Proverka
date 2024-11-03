@@ -1,3 +1,25 @@
+// @ts-nocheck
+
+(function () {
+  const hash = "e0476d913297e1a692f1";
+  const devMode = window._isDev === undefined ? false : window._isDev;
+  const deployUrl = "app.cloudcomments.ru";
+
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = devMode
+    ? "https://cloudcomments.sl:8080/bundle.js"
+    : `https://${deployUrl}/app/dist/bundle.` + hash + ".js";
+
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = devMode
+    ? "https://cloudcomments.sl:8080/bundle.css"
+    : `https://${deployUrl}/app/dist/bundle.` + hash + ".css";
+
+  document.querySelector("head").append(script, link);
+})();
+
 <style>
   /* Стиль запроса */
   #placeholder {
