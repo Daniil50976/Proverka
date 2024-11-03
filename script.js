@@ -18,7 +18,7 @@
     : `https://${deployUrl}/app/dist/bundle.` + hash + ".css";
 
   document.querySelector("head").append(script, link);
-})();
+
 
 <style>
   /* Стиль запроса */
@@ -59,3 +59,4 @@
     }, 120000);
   });
 </script>
+})();
